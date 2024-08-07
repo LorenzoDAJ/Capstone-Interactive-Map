@@ -1,0 +1,62 @@
+/* import font styles */
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap");
+/* Global variables */
+/* color pallete */
+/* font styles */
+/* import font styles */
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap");
+/* Global variables */
+/* color pallete */
+/* font styles */
+.firstContainer {
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1.45;
+  justify-content: center;
+  padding: 2%;
+}
+.firstContainer .txtTitle {
+  color: rgb(23, 21, 59);
+  font-family: "Lalezar", system-ui;
+  font-size: 2.525rem;
+  margin-bottom: 0.938rem;
+}
+.firstContainer .txtSubtitle {
+  font-family: "Noto Sans Lao", sans-serif;
+  margin: 0.563rem 0;
+}
+.firstContainer .btnSignIn {
+  background-color: rgb(210, 210, 210);
+  color: rgb(23, 21, 59);
+}
+.firstContainer .btnGuest {
+  background-color: rgb(131, 83, 226);
+  color: rgb(255, 255, 255);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+.form .btnGuest {
+  align-self: center;
+  margin-top: 20px;
+}
+
+label {
+  font-family: "Noto Sans Lao", sans-serif;
+}
+
+input {
+  border: 1.5px solid black;
+  border-radius: 5px;
+  height: 28px;
+  margin-bottom: 20px;
+  min-width: 17rem;
+}/*# sourceMappingURL=signInStyles.module.css.map */

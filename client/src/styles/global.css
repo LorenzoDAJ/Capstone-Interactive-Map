@@ -1,0 +1,62 @@
+/*
+-- for 07/29/2024 --
+1. create a `global.scss` housing the styles that will be used throughout the webapp
+2. separate non-global styles into respective components [css modules]
+3. If possible, separate global variables then import it to css modules and global scss for use
+
+-- for 08/02/2024 --
+1. add button animation 
+2. add transition animation
+
+*/
+/* import font styles */
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap");
+/* Global variables */
+/* color pallete */
+/* font styles */
+/* Global styles */
+* {
+  /* border: 1px solid red; */ /* For checking/debugging */
+  box-sizing: border-box;
+  margin: 0;
+  overflow: hidden; /* Disable page scroll */
+}
+
+body {
+  -webkit-backdrop-filter: blur(3px) brightness(70%);
+          backdrop-filter: blur(3px) brightness(70%);
+  background-image: url("../assets/images/landingPageBackground.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: 0;
+  border-radius: 40px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: "Lalezar", system-ui;
+  height: 3rem;
+  width: 15rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* navigation global styles */
+ul {
+  padding: 0;
+}
+
+li {
+  cursor: pointer;
+}/*# sourceMappingURL=global.css.map */

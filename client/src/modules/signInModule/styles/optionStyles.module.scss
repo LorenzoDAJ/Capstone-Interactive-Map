@@ -1,0 +1,46 @@
+@import '../../../styles/stylesVariables.scss';
+
+.firstContainer {
+    align-items: center;
+    background-color: $tertiary;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1.45;
+    justify-content: center;
+    padding: 2%;
+
+    .txtTitle { 
+        color: $secondary;
+        font-family: $title;
+        font-size: 2.525rem;
+        margin-bottom: 0.938rem; 
+    }
+
+    .txtSubtitle { 
+        font-family: $subTitle;
+        margin: 0.563rem 0; 
+    }
+
+    .btnSignIn {
+        background-color: $outOfFocus;
+        color: $secondary;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $primary;
+            color: $tertiary;
+        }
+    }
+    
+    .btnGuest {
+        background-color: $primary;
+        color: $tertiary;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $secondary;
+            color: $primary
+        }
+    }
+}

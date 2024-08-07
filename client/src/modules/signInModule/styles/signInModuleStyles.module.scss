@@ -1,0 +1,21 @@
+@import '../../../styles/stylesVariables.scss';
+
+/* Main container for login */
+.rootContainer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 0.625rem;
+} 
+
+/* container for right and left side of landing page */
+.loginContainer {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(15, 15, 15);
+    display: flex;
+    min-height: 65vh;
+    max-width: 75vw;
+    width: 100%;
+    overflow: hidden;
+}
