@@ -5,6 +5,7 @@
     display: flex;
     height: 100vh;
     left: -250px; // to hide the content
+    opacity: 0;
     padding: 80px 0;
     position: fixed;
     transition: 0.3s ease-in-out; // set animation for when is visibile/!visible
@@ -62,5 +63,6 @@
 }
 
 .navBarList.active {
-    left: 0;
+    left: 0; // to show
+    opacity: 1;
 }

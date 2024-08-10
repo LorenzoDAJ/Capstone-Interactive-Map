@@ -31,45 +31,41 @@ export function NavBarComponent() {
 
     return (
         <>
-        <NavListComponent verify = { isHamClicked } /> {/* passing the isClicked value from handleNavClick to NavListComponent */}
+            <NavListComponent verify = { isHamClicked } /> {/* passing the isClicked value from handleNavClick to NavListComponent */}
 
-        <section className = { styles.navBar }>
-            <div /* className = "menu" */>
-                <ul>
-                    <li className = { `${styles.icon} ${styles.hamburger}` } onClick = { handleNavClick }>
-                        <img 
-                            //change the used icon depending on the set bool value of isCliked
-                            src = { isHamClicked ? icons.close : icons.hamburger } 
-                            alt = "hamburger" 
-                        />
-                    </li>
-                    <li className = { `${styles.icon} ${styles.logo}` }>
-                        <span>LOGO</span>
-                    </li>
-                </ul>
-            </div>
-            <div /* className = "user" */>
-                <ul>
-                    <li className = { `${styles.icon} ${styles.web}` }>
-                        <img src = { icons.globe } alt = "web" />
-                    </li>
-                    <li className = { `${styles.icon} ${styles.facebook}` }>
-                        <img src = { icons.fb } alt = "facebook" />
-                    </li>
-                    <li className = { `${styles.icon} ${styles.youtube}` }>
-                        <img src = { icons.yt } alt = "youtube" />
-                    </li>
-                    <li className = { `${styles.icon} ${styles.user}` } onClick = { handleDropClick }>
-                        <img src = { icons.user } alt = "User" />
-                    </li>
-                    <UserDropdownComponent verify = { isDropClicked } />
-                </ul>
-            </div>
-
-            
-        </section>
-
-        
+            <section className = { styles.navBar }>
+                <div /* className = "menu" */>
+                    <ul>
+                        <li className = { `${ styles.icon } ${ styles.hamburger }` } onClick = { handleNavClick }>
+                            <img 
+                                //change the used icon depending on the set bool value of isCliked
+                                src = { isHamClicked ? icons.close : icons.hamburger } 
+                                alt = "hamburger" 
+                            />
+                        </li>
+                        <li className = { `${ styles.icon } ${ styles.logo }` }>
+                            <span>LOGO</span>
+                        </li>
+                    </ul>
+                </div>
+                <div /* className = "user" */>
+                    <ul>
+                        <li className = { `${ styles.icon } ${ styles.web }` }>
+                            <img src = { icons.globe } alt = "web" />
+                        </li>
+                        <li className = { `${ styles.icon } ${ styles.facebook }` }>
+                            <img src = { icons.fb } alt = "facebook" />
+                        </li>
+                        <li className = { `${ styles.icon } ${ styles.youtube }` }>
+                            <img src = { icons.yt } alt = "youtube" />
+                        </li>
+                        <li className = { `${ styles.icon } ${ styles.user }` } onClick = { handleDropClick }>
+                            <img src = { icons.user } alt = "User" />
+                        </li>
+                        <UserDropdownComponent verify = { isDropClicked } />
+                    </ul>
+                </div>
+            </section>
         </>
     )
 
