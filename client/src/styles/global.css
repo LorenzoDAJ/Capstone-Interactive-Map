@@ -12,6 +12,23 @@
 /* import font styles */
 @import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap");
+/* for setting animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
 /* Global variables */
 /* color pallete */
 /* font styles */
@@ -59,4 +76,19 @@ ul {
 
 li {
   cursor: pointer;
+}
+
+/* all kind of input box global styles */
+input, textarea {
+  outline: transparent;
+  padding: 5px;
+  transition: 0.2s ease-in-out;
+}
+input:focus, textarea:focus {
+  border: 1.5px solid rgb(131, 83, 226);
+}
+
+/* label, title and subTitle global styles */
+label, .txtTitle, .txtSubTitle {
+  color: rgb(23, 21, 59);
 }/*# sourceMappingURL=global.css.map */

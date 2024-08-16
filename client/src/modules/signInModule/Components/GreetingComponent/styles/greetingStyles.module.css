@@ -1,0 +1,51 @@
+/* import font styles */
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap");
+/* for setting animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
+/* Global variables */
+/* color pallete */
+/* font styles */
+.secondContainer {
+  align-items: center;
+  background-color: rgb(131, 83, 226);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 2%;
+  text-align: center;
+}
+.secondContainer .greetingContent {
+  animation: fadeIn 0.4s;
+}
+.secondContainer img {
+  height: 4.375rem;
+  margin-top: 1.25rem;
+  width: 4.375rem;
+}
+.secondContainer .txtTitle {
+  color: rgb(255, 255, 255);
+  font-size: 2.525rem;
+  font-family: "Lalezar", system-ui;
+}
+.secondContainer .txtSubtitle {
+  color: rgb(255, 255, 255);
+  font-family: "Noto Sans Lao", sans-serif;
+}/*# sourceMappingURL=greetingStyles.module.css.map */

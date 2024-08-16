@@ -56,3 +56,22 @@ ul {
 li {
     cursor: pointer;
 }
+
+/* all kind of input box global styles */
+
+input, textarea {
+    outline: transparent;
+    padding: 5px;
+    transition: 0.2s ease-in-out;
+
+    &:focus { // works for input but not for textarea
+        border: 1.5px solid $primary;
+    }
+}
+
+/* label, title and subTitle global styles */
+
+label, .txtTitle, .txtSubTitle {
+    color: $secondary;
+}
+

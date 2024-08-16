@@ -1,0 +1,86 @@
+/* import font styles */
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap");
+/* for setting animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
+/* Global variables */
+/* color pallete */
+/* font styles */
+.dropdownMenu {
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  flex-direction: column;
+  opacity: 0;
+  overflow: visible;
+  padding: 30px 20px;
+  position: absolute;
+  right: 7px;
+  top: 120px;
+  transition: 0.3s ease-in-out;
+  visibility: hidden;
+  width: 150px;
+}
+.dropdownMenu::before {
+  background: rgb(255, 255, 255);
+  content: "";
+  height: 20px;
+  position: absolute;
+  right: 28px;
+  transform: rotate(45deg);
+  top: -6px;
+  width: 20px;
+}
+.dropdownMenu .dropMenuTitle {
+  margin: 0 0 10px 0;
+}
+.dropdownMenu .dropMenuTitle .title {
+  font-family: "Lalezar", system-ui;
+  font-size: 18px;
+}
+.dropdownMenu .dropMenuList {
+  align-items: center;
+  border-bottom: 2px solid rgb(210, 210, 210);
+  border-top: 2px solid rgb(210, 210, 210);
+  justify-content: center;
+  padding: 10px 0;
+  width: 110%;
+}
+.dropdownMenu .dropMenuList li:hover .icon {
+  filter: invert(32%) sepia(95%) saturate(906%) hue-rotate(232deg) brightness(100%) contrast(91%);
+  transition: 0.3s ease-in-out;
+}
+.dropdownMenu .dropMenuList li:hover .text {
+  color: rgb(131, 83, 226);
+  transition: 0.3s ease-in-out;
+}
+.dropdownMenu .dropMenuList .text {
+  color: rgb(23, 21, 59);
+  font-family: "Noto Sans Lao", sans-serif;
+  font-size: 14px;
+  margin: 0 0 0 10px;
+}
+.dropdownMenu .icon {
+  height: 20px;
+  width: 20px;
+}
+
+.dropdownMenu.active {
+  opacity: 1;
+  top: 85px;
+  visibility: visible;
+}/*# sourceMappingURL=userDropdownStyles.module.css.map */

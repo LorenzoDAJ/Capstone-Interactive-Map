@@ -1,0 +1,59 @@
+@import '../../../../../styles/stylesVariables.scss';
+
+
+.rootNavigation {
+    width: 100%;
+}
+
+.navBar {
+    align-items: center;
+    background-color: $primary;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    padding: 0 20px;
+    width: 100%;
+
+    div {
+        align-items: center;
+        display: flex;
+    }
+
+    ul {
+        display: flex;
+        list-style-type: none;
+    }
+
+    li {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: 0 10px;
+    }
+}
+
+// general icon styles
+.icon {  
+    img {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+// specific icon styles
+.icon.user { //add a dropdown for the user icon
+    background-color: $guest;
+    border-radius: 50%;
+    height: 50px;
+    margin: 0 0 0 10px;
+    width: 50px;
+
+    img {
+        height: 25px;
+        width: 25px;
+    }
+}
+
+.icon.logo {
+    margin: 0 0 0 13px; 
+}

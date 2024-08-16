@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
-import { OptionComponent } from './Components/OptionComponent/OptionComponent.jsx';
-import { SignInComponent } from './Components/SignInComponent/SignInComponent.jsx';
-import { GreetingComponent } from './Components/GreetingComponent/GreetingComponent.jsx';
+import Option from './Components/OptionComponent/Option.jsx';
+import Greeting from './Components/GreetingComponent/Greeting.jsx';
 import styles from './styles/signInModuleStyles.module.scss';
 
 export function SignInModule() {
@@ -20,8 +19,8 @@ export function SignInModule() {
     return(
         <>
             <div className = { styles.loginContainer }> {/* Main container for option and login form*/}
-                <OptionComponent /> {/*SignInComponent is called within OptionComponent [Both share a single container]*/}
-                <GreetingComponent />
+                <Option /> {/*SignInComponent is called within OptionComponent [Both share a single container]*/}
+                <Greeting />
             </div>
         </>
     )

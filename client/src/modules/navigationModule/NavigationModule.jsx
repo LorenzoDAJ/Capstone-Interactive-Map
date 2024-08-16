@@ -1,8 +1,8 @@
-import { NavBarComponent } from './Components/NavBarComponent/NavBarComponent.jsx';
+import NavBar from './Components/NavBarComponent/NavBar.jsx';
 
 export function NavigationModule () {
     
     return (
-        <NavBarComponent />
+        <NavBar />
     )
 }
