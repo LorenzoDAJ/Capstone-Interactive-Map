@@ -4,25 +4,11 @@ NavigationModule.jsx
 
 */
 
-
-import { useState, useEffect } from 'react';
-import NavList from '../NavListComponent/NavList.jsx';
-import UserDropdownComponent from '../UserDropdownComponent/UserDropdown.jsx';
+import { useEffect } from 'react';
 import icons from '../../../../assets/icons/Icons.jsx';
 import styles from './styles/navBarStyles.module.scss';
 
-export default function NavBar() {
-    const [isHamClicked, setIsHamClicked] = useState(false);
-    const [isDropClicked, setIsDropClicked] = useState(false);
-
-    //check is hamburger is clicked, change bool value whenever it is clicked
-    function handleNavClick() {
-        setIsHamClicked(!isHamClicked);
-    }
-
-    function handleDropClick() {
-        setIsDropClicked(!isDropClicked);
-    }
+export default function NavBar({ isHamClicked, isNavListClosed, handleNavClick, handleDropClick }) {
 
     // adds the className rootContainer to the #root and removes it once the component unmounts
     useEffect(function() {
@@ -38,15 +24,13 @@ export default function NavBar() {
 
     return (
         <>
-            <NavList verify = { isHamClicked } /> {/* passing the isClicked value from handleNavClick to NavListComponent */}
-
             <section className = { styles.navBar }>
                 <div /* className = "menu" */>
                     <ul>
                         <li className = { `${ styles.icon } ${ styles.hamburger }` } onClick = { handleNavClick }>
                             <img 
                                 //change the used icon depending on the set bool value of isCliked
-                                src = { isHamClicked ? icons.close : icons.hamburger } 
+                                src = { isHamClicked && isNavListClosed ? icons.close : icons.hamburger } 
                                 alt = "hamburger" 
                             />
                         </li>
@@ -58,18 +42,17 @@ export default function NavBar() {
                 <div /* className = "user" */>
                     <ul>
                         <li className = { `${ styles.icon } ${ styles.web }` }>
-                            <img src = { icons.globe } alt = "web" />
+                            <img src = { icons.globe } alt = "Web" />
                         </li>
                         <li className = { `${ styles.icon } ${ styles.facebook }` }>
-                            <img src = { icons.fb } alt = "facebook" />
+                            <img src = { icons.fb } alt = "Facebook" />
                         </li>
                         <li className = { `${ styles.icon } ${ styles.youtube }` }>
-                            <img src = { icons.yt } alt = "youtube" />
+                            <img src = { icons.yt } alt = "Youtube" />
                         </li>
-                        <li className = { `${ styles.icon } ${ styles.user }` } onClick = { handleDropClick }>
-                            <img src = { icons.user } alt = "User" />
+                        <li id = "userIcon" className = { `${ styles.icon } ${ styles.user }` } onClick = { handleDropClick }>
+                            <img src = { icons.user } alt = "User Icon" />
                         </li>
-                        <UserDropdownComponent verify = { isDropClicked } />
                     </ul>
                 </div>
             </section>

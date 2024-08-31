@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap");
 /* for setting animations */
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap");
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -21,18 +23,181 @@
 /* Global variables */
 /* color pallete */
 /* font styles */
+/*
+-- for 07/29/2024 --
+1. create a `global.scss` housing the styles that will be used throughout the webapp
+2. separate non-global styles into respective components [css modules]
+3. If possible, separate global variables then import it to css modules and global scss for use
+
+-- for 08/02/2024 --
+1. add button animation 
+2. add transition animation
+
+*/
+/* import font styles */
+/* for setting animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
+/* Global variables */
+/* color pallete */
+/* font styles */
+/* Global styles */
+* {
+  /* border: 1px solid red; */ /* For checking/debugging */
+  box-sizing: border-box;
+  margin: 0;
+  overflow: hidden; /* Disable page scroll */
+}
+
+body {
+  -webkit-backdrop-filter: blur(3px) brightness(70%);
+          backdrop-filter: blur(3px) brightness(70%);
+  background-image: url("../assets/images/landingPageBackground.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: 0;
+  border-radius: 40px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: "Lalezar", system-ui;
+  height: 3rem;
+  width: 15rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* navigation global styles */
+ul {
+  padding: 0;
+}
+
+li {
+  cursor: pointer;
+}
+
+/* all kind of input box global styles */
+input, textarea {
+  border-radius: 5px;
+  border: 1.5px solid black;
+  padding: 5px;
+  outline: transparent;
+  transition: all 0.2s ease-in-out;
+}
+input:focus, textarea:focus {
+  border: 1.5px solid rgb(131, 83, 226);
+}
+
+/* label, title and subTitle global styles */
+label, .txtTitle, .txtSubTitle {
+  color: rgb(23, 21, 59);
+}
+
+.txtTitle {
+  font-family: "Lalezar", system-ui;
+  font-size: 2.525rem;
+}
+
+.txtSubTitle {
+  font-family: "Noto Sans Lao", sans-serif;
+}
+
+/* close/return icons */
+.return {
+  align-items: center;
+  background-color: rgb(210, 210, 210);
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+  width: 50px;
+}
+.return img {
+  height: 25px;
+  filter: invert(10%) sepia(33%) saturate(3192%) hue-rotate(225deg) brightness(81%) contrast(100%);
+  transition: all 0.2s ease-in-out;
+  width: 25px;
+}
+
+.return:hover {
+  background-color: rgb(23, 21, 59);
+}
+.return:hover img {
+  filter: invert(30%) sepia(72%) saturate(1526%) hue-rotate(240deg) brightness(101%) contrast(90%);
+}
+
+.close {
+  align-self: flex-end;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+.close img {
+  height: 25px;
+  filter: invert(10%) sepia(33%) saturate(3192%) hue-rotate(225deg) brightness(81%) contrast(100%);
+  transition: all 0.2s ease-in-out;
+  width: 25px;
+}
+
+.close:hover img {
+  filter: invert(30%) sepia(72%) saturate(1526%) hue-rotate(240deg) brightness(101%) contrast(90%);
+}
+
+.arrowBtn {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 50px;
+  position: absolute;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.arrowBtn:hover {
+  color: rgb(131, 83, 226);
+  scale: 1.125;
+}
+
 .dropdownMenu {
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
   flex-direction: column;
-  opacity: 0;
   overflow: visible;
   padding: 30px 20px;
   position: absolute;
   right: 7px;
-  top: 120px;
-  transition: 0.3s ease-in-out;
-  visibility: hidden;
+  transform: translateY(3%);
   width: 150px;
 }
 .dropdownMenu::before {
@@ -48,39 +213,56 @@
 .dropdownMenu .dropMenuTitle {
   margin: 0 0 10px 0;
 }
-.dropdownMenu .dropMenuTitle .title {
-  font-family: "Lalezar", system-ui;
+.dropdownMenu .dropMenuTitle .txtTitle {
   font-size: 18px;
 }
 .dropdownMenu .dropMenuList {
   align-items: center;
   border-bottom: 2px solid rgb(210, 210, 210);
   border-top: 2px solid rgb(210, 210, 210);
+  display: flex;
   justify-content: center;
   padding: 10px 0;
-  width: 110%;
+  width: 110px;
 }
-.dropdownMenu .dropMenuList li:hover .icon {
-  filter: invert(32%) sepia(95%) saturate(906%) hue-rotate(232deg) brightness(100%) contrast(91%);
+.dropdownMenu .dropMenuList .icon {
+  height: 20px;
+  margin: 0 0 -5px 0;
   transition: 0.3s ease-in-out;
-}
-.dropdownMenu .dropMenuList li:hover .text {
-  color: rgb(131, 83, 226);
-  transition: 0.3s ease-in-out;
+  width: 20px;
 }
 .dropdownMenu .dropMenuList .text {
   color: rgb(23, 21, 59);
   font-family: "Noto Sans Lao", sans-serif;
   font-size: 14px;
   margin: 0 0 0 10px;
+  transition: 0.3s ease-in-out;
 }
-.dropdownMenu .icon {
-  height: 20px;
-  width: 20px;
+.dropdownMenu .dropMenuList li:hover .icon {
+  filter: invert(32%) sepia(95%) saturate(906%) hue-rotate(232deg) brightness(100%) contrast(91%);
+}
+.dropdownMenu .dropMenuList li:hover .text {
+  color: rgb(131, 83, 226);
 }
 
-.dropdownMenu.active {
+.fade-enter {
+  opacity: 0;
+  transform: translateY(25%);
+}
+
+.fade-enter-active {
   opacity: 1;
-  top: 85px;
-  visibility: visible;
+  transform: translateY(3%);
+  transition: all 0.3s ease;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(3%);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(25%);
+  transition: all 0.3s ease;
 }/*# sourceMappingURL=userDropdownStyles.module.css.map */

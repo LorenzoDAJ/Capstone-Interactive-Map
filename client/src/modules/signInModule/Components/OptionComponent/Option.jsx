@@ -3,24 +3,10 @@
 SignInModule.jsx
 */
 
-import { useState } from 'react';
 import { Link } from "react-router-dom";
 import styles from './styles/optionStyles.module.scss';
-import SignIn from '../SignInComponent/SignIn.jsx'; 
 
-export default function Option({ onSignInClick }) {
-    const [isBtnClicked, setIsBtnClicked] = useState(false);
-
-    // checks if the sign in button is clicked
-    function handleBtnClick() {
-        setIsBtnClicked(true);
-    }
-
-    // wraps the function calls under a function (inline possible)
-    function onClick() {
-        // onSignInClick();
-        handleBtnClick();
-    }
+export default function Option({ isBtnClicked, onClick }) {
 
     return (
         <>
@@ -32,8 +18,6 @@ export default function Option({ onSignInClick }) {
                     <button className = { styles.btnGuest }><Link to = "/map">Guest Login</Link></button> 
                 </div>
             </div>
-
-            <SignIn verify = { isBtnClicked } />
         </>
     )
 }

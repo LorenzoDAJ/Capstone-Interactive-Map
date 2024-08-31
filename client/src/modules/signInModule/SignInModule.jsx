@@ -1,5 +1,7 @@
-import { useEffect } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import { useState, useEffect } from 'react';
 import Option from './Components/OptionComponent/Option.jsx';
+import SignIn from './Components/SignInComponent/SignIn.jsx';
 import Greeting from './Components/GreetingComponent/Greeting.jsx';
 import styles from './styles/signInModuleStyles.module.scss';
 
@@ -16,10 +18,32 @@ export function SignInModule() {
         };
     }, []);
 
+    // --------- Option Component ---------
+    const [isBtnClicked, setIsBtnClicked] = useState(false);
+
+    // checks if the sign in button is clicked
+    function handleBtnClick() {
+        setIsBtnClicked(!isBtnClicked);
+    }
+
+    // wraps the function calls under a function (inline possible)
+    function onClick() {
+        // onSignInClick();
+        handleBtnClick();
+    }
+
     return(
         <>
             <div className = { styles.loginContainer }> {/* Main container for option and login form*/}
-                <Option /> {/*SignInComponent is called within OptionComponent [Both share a single container]*/}
+                <Option 
+                    isBtnClicked = { isBtnClicked }
+                    onClick = { onClick }
+                />
+                <SignIn 
+                    isBtnClicked = { isBtnClicked } 
+                    onClick = { onClick }    
+                />
+                
                 <Greeting />
             </div>
         </>

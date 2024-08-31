@@ -1,29 +1,35 @@
 /* 
 -- Files where ContactUs is imported --
-NavListComponent.jsx
+ContactUsModule.jsx
 
 */
 
 import { useEffect } from 'react';
 import styles from './styles/contactUsStyles.module.scss';
+import icons from '../../../../../../assets/icons/Icons.jsx';
 
-export default function ContactUs({ isContactUs }) { // isContactUs is a prop from NavListComponent
-    
-    // adds the className rootContainer to the #root and removes it once the component unmounts
+export default function ContactUs({ setCurrentModal, handleClickOutside, currentModal, nodeRef, ...props }) { // isModalActive is a prop from NavListComponent
+
+    // closes the modal box if the user clicked outside (anywhere in the screen except the modal box)
     useEffect(function() {
-        const root = document.getElementById('root');
-        root.classList.add(styles.rootContactUs);
-
-        //removes the className once unmount
-        return function() {
-            root.classList.remove(styles.rootContactUs);
+        if (currentModal) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+        
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, []);
+    }, [currentModal]);
 
     return (
         <>
-            <div className = { isContactUs ? `${ styles.contactUsContainer } ${ styles.active }` : styles.contactUsContainer }>
+            <div id = "contactUs" ref = { nodeRef } className = { `${ styles.contactUsContainer } ${ props.className }` }>
                 <div className = { styles.contactUsContent }>
+                    <div className = { styles.close } onClick = { function() { setCurrentModal(null); }}>
+                        <img src = { icons.close } alt = "Close" />
+                    </div>
                     <span className = { styles.txtTitle }>Contact Us</span>
                     <form className =  { styles.form }>
                         <label htmlFor = "name">Name</label>

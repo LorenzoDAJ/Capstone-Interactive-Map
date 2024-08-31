@@ -1,30 +1,19 @@
-@import '../../../../styles/stylesVariables.scss';
-@import '../../../../styles/global.scss';
+@import '../../../../../../../styles/stylesVariables.scss';
+@import '../../../../../../../styles/global.scss';
 
 .contactUsContainer {
     background-color: $tertiary;
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    left: 50%;
     max-height: 70%;
-    opacity: 0;
     padding: 30px 40px;
     position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: 0.3s ease-in-out;
-    visibility: hidden;
     
     .contactUsContent {
         align-items: center;
         display: flex;
         flex-direction: column;
-        
-        .txtTitle {
-            font-family: $title;
-            font-size: 2.525rem;
-        }
 
         .form {
             display: flex;
@@ -35,18 +24,12 @@
             }
 
             textarea {
-                border: 1.5px solid black;
-                border-radius: 5px;
                 font-family: $subTitle;
                 height: 150px;
                 resize: none;
-
-                &:focus { // should be in the global.scss but does not work for some reason
-                    border: 1.5px solid $primary;
-                }
             }
 
-            .submitBtn {
+            .submitBtn { // consider placing in global
                 align-self: center;
                 background-color: $guest;
                 color: $tertiary;
@@ -62,7 +45,3 @@
     }
 }
 
-.contactUsContainer.active {
-    visibility: visible;
-    opacity: 1;
-}

@@ -1,14 +1,6 @@
 @import '../../../../../styles/stylesVariables.scss';
 @import '../../OptionComponent/styles/optionStyles.module.scss'; // imports the style for optionStyles since it is technically the same container.
 
-/*
-----PENDING----
-fix the issue where the width of this component changes (different from optionComponent) when it is active
-
-
-*/
-
-
 .firstContainer {
     &.signIn {
         display: none;
@@ -19,8 +11,8 @@ fix the issue where the width of this component changes (different from optionCo
     }
 
     .signInContent {
-        opacity: 0;
         display: none;
+        opacity: 0;
     }
 
     .signInContent.active {

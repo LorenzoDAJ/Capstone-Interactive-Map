@@ -42,27 +42,10 @@
   padding: 21px 20px;
   width: 100%;
 }
-.navBarList .navList li:hover .icon {
-  filter: invert(32%) sepia(95%) saturate(906%) hue-rotate(232deg) brightness(100%) contrast(91%);
-  transition: 0.2s ease-in-out;
-}
-.navBarList .navList li:hover .text {
-  color: rgb(131, 83, 226);
-  transition: 0.2s ease-in-out;
-}
-.navBarList .navList li:hover::after {
-  background: rgb(131, 83, 226);
-  margin-top: 50px;
-  content: "";
-  height: 3px;
-  left: 20px;
-  position: absolute;
-  transition: 0.2s ease-in-out;
-  width: 30%;
-}
 .navBarList .navList li .icon {
-  filter: invert(12%) sepia(20%) saturate(1921%) hue-rotate(204deg) brightness(97%) contrast(106%);
+  filter: invert(10%) sepia(33%) saturate(3192%) hue-rotate(225deg) brightness(81%) contrast(100%);
   height: 30px;
+  transition: all 0.2s ease-in-out;
   width: 30px;
 }
 .navBarList .navList li .text {
@@ -70,6 +53,26 @@
   display: flex;
   margin: 0 0 0 20px;
   padding: 5px 0 0 0;
+  transition: 0.2s ease-in-out;
+}
+.navBarList .navList li:hover .icon {
+  filter: invert(32%) sepia(95%) saturate(906%) hue-rotate(232deg) brightness(100%) contrast(91%);
+}
+.navBarList .navList li:hover .text {
+  color: rgb(131, 83, 226);
+}
+.navBarList .navList li::after {
+  background-color: transparent;
+  content: "";
+  height: 3px;
+  left: 20px;
+  margin-top: 50px;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  width: 30%;
+}
+.navBarList .navList li:hover::after {
+  background: rgb(131, 83, 226);
 }
 
 .navBarList.active {

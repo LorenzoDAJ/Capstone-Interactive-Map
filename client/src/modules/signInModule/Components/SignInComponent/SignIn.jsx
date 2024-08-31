@@ -6,10 +6,11 @@ Option.jsx
 import { Link } from "react-router-dom";
 
 import styles from './styles/signInStyles.module.scss';
+import icons from '../../../../assets/icons/Icons.jsx';
 
 // import axios from 'axios'
 
-export default function SignIn (props) {
+export default function SignIn ({ isBtnClicked, onClick }) {
     // const [email, setEmail] = useState()
     // const [password, setPassword] = useState()
     // // const navigate = useNavigate()
@@ -24,11 +25,13 @@ export default function SignIn (props) {
     //         console.log(e);
     //     }
     // }
-    const isBtnClicked = props.verify;
 
     return (
         <div className = { isBtnClicked ? `${ styles.firstContainer } ${ styles.signIn } ${ styles.active }` : `${ styles.firstContainer } ${ styles.signIn }` }> {/* Login form */}  
             <div className = { isBtnClicked ? `${ styles.signInContent } ${ styles.active }` : styles.signInContent }>
+                <div className = { styles.return } onClick = { onClick }>
+                    <img src = { icons.arrow } alt = "Close" />
+                </div>
                 <span className = { styles.txtTitle }>Sign in</span>
                 <form className = { styles.form } /* onSubmit = {handleSubmit} */ >
                     <label htmlFor = "email">Email</label>

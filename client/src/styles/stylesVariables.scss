@@ -4,13 +4,13 @@
 
 /* for setting animations */
 @keyframes fadeIn {
-    0% { opacity: 0;}
-    100% { opacity: 1;}
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 @keyframes fadeOut {
-    100% { opacity: 1;}
-    0% { opacity: 0;}
+    100% { opacity: 1; }
+    0% { opacity: 0; }
 }
 
 
@@ -19,8 +19,9 @@
     $primary: rgb(131, 83, 226); // #8353E2
     $secondary: rgb(23, 21, 59); // #17153B
     $tertiary: rgb(255, 255, 255); // #FFFFFF
-    $outOfFocus: rgb(210, 210, 210); 
+    $outOfFocus: rgb(210, 210, 210); //#D2D2C9
     $guest: rgb(0, 189, 214); // #00BDD6
+    // Active Star Color Hex #FFC107
 
     /* font styles */
     $title: "Lalezar", system-ui;

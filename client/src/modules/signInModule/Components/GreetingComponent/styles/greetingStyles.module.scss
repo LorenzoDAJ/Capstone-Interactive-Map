@@ -1,4 +1,5 @@
 @import '../../../../../styles/stylesVariables.scss';
+@import '../../../../../styles/global.scss';
 
 .secondContainer {
     align-items: center;
@@ -23,8 +24,6 @@
 
     .txtTitle {
         color: $tertiary;
-        font-size: 2.525rem;
-        font-family: $title;
     }
 
     .txtSubtitle {

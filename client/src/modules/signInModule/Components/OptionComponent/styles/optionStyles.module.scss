@@ -6,7 +6,8 @@
     display: flex;
     flex: 1;
     flex-grow: 1.45;
-    padding: 2%;
+    padding: 5%;
+    width: 20vw;
 
     &.option {
         display: none;
@@ -32,9 +33,6 @@
     }
 
     .txtTitle { 
-        color: $secondary;
-        font-family: $title;
-        font-size: 2.525rem;
         margin-bottom: 0.938rem; 
     }
 
@@ -65,3 +63,21 @@
         }
     }
 }
+
+// .fade-enter {
+//     opacity: 0;
+// }
+
+// .fade-enter-active {
+//     opacity: 1;
+//     transition: opacity 0.4s ease;
+// }
+
+// .fade-exit {
+//     opacity: 1;
+// }
+
+// .fade-exit-active {
+//     opacity: 0;
+//     transition: opacity 0.4s ease;
+// }

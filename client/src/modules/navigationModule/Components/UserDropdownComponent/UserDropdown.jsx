@@ -2,23 +2,36 @@
 
 /* 
 -- Files where UserDropdown is imported --
-NavBar.jsx
+NavigationModule.jsx
 
 */
 
 import { Link } from "react-router-dom";
+import { useEffect } from 'react';
 
 import icons from '../../../../assets/icons/Icons.jsx';
 import styles from './styles/userDropdownStyles.module.scss';
 
-export default function UserDropdown(props) {
-    const isClicked = props.verify;
+export default function UserDropdown({ handleClickOutside, isDropClicked, nodeRef, ...props }) {
 
+    // closes the dropdown if the user clicked outside (anywhere in the screen except the dropdown)
+    useEffect(function() {
+        if (isDropClicked) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+        
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isDropClicked]);
+    
     return (
         <>  
-            <div className = { isClicked ? `${styles.dropdownMenu} ${styles.active}`: styles.dropdownMenu } >
+            <div id = "dropdown" ref = { nodeRef } className = { `${ styles.dropdownMenu } ${ props.className }`} >
                 <div className = { styles.dropMenuTitle }>
-                    <span className = { styles.title }>Guest Account</span> {/* Will be changed to handle dynamic data */}
+                    <span className = { styles.txtTitle }>Guest Account</span> {/* Will be changed to handle dynamic data */}
                 </div>
                 <ul className = { styles.dropMenuList }>
                     {/* If guest account is used */}
