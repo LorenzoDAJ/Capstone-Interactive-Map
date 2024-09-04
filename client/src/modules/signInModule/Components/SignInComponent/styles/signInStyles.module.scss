@@ -2,20 +2,12 @@
 @import '../../OptionComponent/styles/optionStyles.module.scss'; // imports the style for optionStyles since it is technically the same container.
 
 .firstContainer {
-    &.signIn {
-        display: none;
-    }
 
-    &.signIn.active {
+    &.signIn {
         display: inherit;
     }
 
     .signInContent {
-        display: none;
-        opacity: 0;
-    }
-
-    .signInContent.active {
         align-items: center;
         animation: fadeIn 0.6s;
         opacity: 1;

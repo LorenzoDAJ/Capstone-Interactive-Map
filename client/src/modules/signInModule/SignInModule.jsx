@@ -26,24 +26,17 @@ export function SignInModule() {
         setIsBtnClicked(!isBtnClicked);
     }
 
-    // wraps the function calls under a function (inline possible)
-    function onClick() {
-        // onSignInClick();
-        handleBtnClick();
-    }
 
     return(
         <>
             <div className = { styles.loginContainer }> {/* Main container for option and login form*/}
-                <Option 
-                    isBtnClicked = { isBtnClicked }
-                    onClick = { onClick }
-                />
-                <SignIn 
-                    isBtnClicked = { isBtnClicked } 
-                    onClick = { onClick }    
-                />
-                
+                {isBtnClicked 
+                    ? <SignIn 
+                        handleBtnClick = { handleBtnClick }
+                        />
+                    : <Option 
+                            handleBtnClick = { handleBtnClick }
+                        /> }
                 <Greeting />
             </div>
         </>
