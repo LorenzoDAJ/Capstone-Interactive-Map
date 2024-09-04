@@ -36,8 +36,10 @@ export default function UserDropdown({ handleClickOutside, isDropClicked, nodeRe
                 <ul className = { styles.dropMenuList }>
                     {/* If guest account is used */}
                     <li>
-                        <img className = { `${styles.icon} ${styles.signin}` } src = {icons.signIn} alt = "Signin"/>
-                        <span className = { styles.text }><Link to = "/">Sign in</Link></span>
+                        <a href="/">
+                            <img className = { `${styles.icon} ${styles.signin}` } src={icons.signIn} alt="Sign in" />
+                            <span className = { styles.text }>Sign in</span>
+                        </a>
                     </li>
 
                     {/* else, if existing account is logged in */}

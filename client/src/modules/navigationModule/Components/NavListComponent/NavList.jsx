@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 import icons from '../../../../assets/icons/Icons.jsx';
 import styles from './styles/navListStyles.module.scss';
 
-export default function NavList ({ handleClickOutside, isHamClicked, isNavListClosed, handleModalClick, captureNavListClick }) {
+export default function NavList ({ handleClickOutside, isHamClicked, isNavListClosed, handleNavClick, captureNavListClick }) {
 
     // closes the dropdown if the user clicked outside (anywhere in the screen except the dropdown)
     useEffect(function() {
@@ -33,19 +33,19 @@ export default function NavList ({ handleClickOutside, isHamClicked, isNavListCl
                         <img className = { `${styles.icon} ${styles.map}` } src = { icons.map } alt = "Map" />
                         <span className = { styles.text }>Map</span>
                     </li>
-                    <li onClick = { function() { handleModalClick(); captureNavListClick('newsAndEvents'); } }>
+                    <li onClick = { function() { handleNavClick(); captureNavListClick('newsAndEvents'); } }>
                         <img className = { `${styles.icon} ${styles.calendar}` } src = { icons.calendar } alt = "News and Events" />
                         <span className = { styles.text }>News and Events</span>
                     </li>
-                    <li onClick = { function() { handleModalClick(); captureNavListClick('aboutUs'); } }>
+                    <li onClick = { function() { handleNavClick(); captureNavListClick('aboutUs'); } }>
                         <img className = { `${styles.icon} ${styles.info}` } src = { icons.info } alt = "About Us" />
                         <span className = { styles.text }>About Us</span>
                     </li>
-                    <li onClick = { function() { handleModalClick(); captureNavListClick('contactUs'); } }>
+                    <li onClick = { function() { handleNavClick(); captureNavListClick('contactUs'); } }>
                         <img className = { `${styles.icon} ${styles.contact}` } src = { icons.contact } alt = "Contact Us" />
                         <span className = { styles.text }>Contact Us</span>
                     </li>
-                    <li onClick = { function() { handleModalClick(); captureNavListClick('submitFeedback'); } }>
+                    <li onClick = { function() { handleNavClick(); captureNavListClick('submitFeedback'); } }>
                         <img className = { `${styles.icon} ${styles.feedback}` } src = { icons.feedback } alt = "Submit Feedback" />
                         <span className = { styles.text }>Submit Feedback</span>
                     </li>

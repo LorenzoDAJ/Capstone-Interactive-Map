@@ -7,10 +7,11 @@ import { Link } from "react-router-dom";
 
 import styles from './styles/signInStyles.module.scss';
 import icons from '../../../../assets/icons/Icons.jsx';
+import { useEffect } from "react";
 
 // import axios from 'axios'
 
-export default function SignIn ({ isBtnClicked, onClick }) {
+export default function SignIn ({ isBtnClicked,  handleBtnClick }) {
     // const [email, setEmail] = useState()
     // const [password, setPassword] = useState()
     // // const navigate = useNavigate()
@@ -25,11 +26,15 @@ export default function SignIn ({ isBtnClicked, onClick }) {
     //         console.log(e);
     //     }
     // }
+    useEffect(()=>{
+        console.log(isBtnClicked)
+    })
+    
 
     return (
-        <div className = { isBtnClicked ? `${ styles.firstContainer } ${ styles.signIn } ${ styles.active }` : `${ styles.firstContainer } ${ styles.signIn }` }> {/* Login form */}  
-            <div className = { isBtnClicked ? `${ styles.signInContent } ${ styles.active }` : styles.signInContent }>
-                <div className = { styles.return } onClick = { onClick }>
+        <div className = {`${ styles.firstContainer } ${ styles.signIn }`}> {/* Login form */}  
+            <div className = { `${ styles.signInContent }`}>
+                <div className = { styles.return } onClick = { handleBtnClick }>
                     <img src = { icons.arrow } alt = "Close" />
                 </div>
                 <span className = { styles.txtTitle }>Sign in</span>

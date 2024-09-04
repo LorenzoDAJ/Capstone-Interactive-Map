@@ -28,7 +28,7 @@ export default function NavigationModule () {
         } else if (isDropClicked && !document.getElementById("dropdown").contains(e.target) && !document.getElementById("userIcon").contains(e.target)) {
             setIsDropClicked(!isDropClicked);
         }
-        else if (!isNavListClosed && !document.getElementById("navigationList").contains(e.target)) {
+        else if (!isNavListClosed && !document.getElementById("navigationList").contains(e.target) && !document.querySelector("#navBar").contains(e.target)) {
             handleNavClick();
         }
     }
@@ -40,6 +40,7 @@ export default function NavigationModule () {
     function handleNavClick() {
         setIsHamClicked(!isHamClicked);
         setIsNavListClosed(!isNavListClosed); 
+        console.log(isHamClicked)
     }
 
 // ------- NavList Logic Section -------  
@@ -51,12 +52,6 @@ export default function NavigationModule () {
     // fetch which modal is clicked from the navList (Applied for every modal within the navList)
     function captureNavListClick (modal) {
         setCurrentModal(modal);
-    }
-
-    // checks if a link from navList is clicked. Shows the modal of the clicked link, revert the navList and hamburger menu (Applied for every modal within the navList)
-    function handleModalClick() {
-        setIsNavListClosed(!isNavListClosed);
-        setIsHamClicked(!isHamClicked);
     }
     
 // ------- UserDropdown Logic Section -------
@@ -85,7 +80,7 @@ export default function NavigationModule () {
                     handleClickOutside = { handleClickOutside }
                     isHamClicked = { isHamClicked } 
                     isNavListClosed = { isNavListClosed }
-                    handleModalClick = { handleModalClick }  
+                    handleNavClick = { handleNavClick } 
                     captureNavListClick = { captureNavListClick }  
                 />
                 

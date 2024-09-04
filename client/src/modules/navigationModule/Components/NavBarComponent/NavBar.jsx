@@ -24,7 +24,7 @@ export default function NavBar({ isHamClicked, isNavListClosed, handleNavClick, 
 
     return (
         <>
-            <section className = { styles.navBar }>
+            <section id='navBar' className = {styles.navBar} >
                 <div /* className = "menu" */>
                     <ul>
                         <li className = { `${ styles.icon } ${ styles.hamburger }` } onClick = { handleNavClick }>

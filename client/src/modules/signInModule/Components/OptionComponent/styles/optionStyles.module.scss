@@ -9,20 +9,12 @@
     padding: 5%;
     width: 20vw;
 
-    &.option {
-        display: none;
-    }
 
-    &.option.active {
+    &.option {
         display: inherit;
     }
 
     .optionContent{
-        display: none;
-        opacity: 0;
-    }
-
-    .optionContent.active{
         align-items: center;
         animation: fadeIn 0.4s; // fadeIn located in stylesVariables.scss
         display: inherit;
